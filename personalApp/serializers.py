@@ -28,10 +28,10 @@ class PersonalSerializer(serializers.ModelSerializer):
 class DepartmentPersonalSerializer(serializers.ModelSerializer):
     personal_count = serializers.SerializerMethodField()
     departments =PersonalSerializer(many=True,read_only=True)
-    # * +(nested serializer)obje olarak gösteriyor bütünbilgiler ve many=True yapıyoruz ki birden fazla personel gelebilsin diye
+    #+(nested serializer)obje olarak gösteriyor bütünbilgiler ve many=True yapıyoruz ki birden fazla personel gelebilsin diye
     #deparments modeldeki related name den geliyor
-    # ? deparments = serializers.StringRelatedField(many=True)#+string olrak gösteriyor ama modeldeki __str__ içindekine göre yani admin de nasıl gözüküyorsa
-    # ? deparments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)#öğrencinin id sini gösteriyor
+    # deparments = serializers.StringRelatedField(many=True)#+string olrak gösteriyor ama modeldeki __str__ içindekine göre yani admin de nasıl gözüküyorsa
+    #deparments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)#öğrencinin id sini gösteriyor
     class Meta:
         model = Department
         fields = ('id','name','personal_count','departments')
