@@ -1,62 +1,143 @@
+<h1 align="center">Full Stack - Personal List App - Backend</h1>
 
+<div align="center">
+  <h3>
+    <a href="http://esadd26.pythonanywhere.com/">
+      Project Link
+    </a>
+  </h3>
+</div>
 
+<!-- TABLE OF CONTENTS -->
 
-# Full Stack Project Personal List App- Backend
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Info](#projectinfo)
+<!-- - [Entity Relationship Diagram](#entity-relationship-diagram) -->
+- [Project Link](#project-link)
+- [Preview](#preview-of-the-project)
+- [Built With](#built-with)
+- [Project Structure](#project-structure)
+- [How to use](#how-to-use)
+- [Contact](#contact)
+
+## Overview  
+
+- This is the backend side of my personal list app project.
+- I used reactjs for frontend.
+  ##### You can see the frontend side of this project from [here](https://github.com/esadakman/reactjs-personal-app-frontend) 👈
+
+## Project Info
+
+<ul>
+    <li>Department and Personnel tables are interconnected and each department has its own personnel..</li>
+    <li>Company personnel who have logged into the system can see the departments of the company and the personnel working under those departments in detail.</li>
+    <li>Staff members can add or update new staff to the department list.</li>
+    <li>Only superusers will have the authority to delete staff.</li>
+    <li>We will construct this structure using a generic view. In order to override Class methods, we will provide if-else structures that should act accordingly whether the person is a staff or superuser. We will use IsAuthenticated from Rest framework permissions.</li>
+    <li>I used nested serializer and method fields in our serializer.</li>
+    <li>I used the cors-headers package to connect the frontend to our API.</li>
+</ul>
+
+- You can perform staff operations using the following account information:
+  - userName: michaelscott
+  - password: Littlekidlover1
+<!-- ERD -->
+
+<!-- ## Entity Relationship Diagram -->
+
+ <!-- OVERVIEW -->
+
+## Project Link
+
+#### You can reach my project from [here](http://esadd26.pythonanywhere.com/) 👈
+## Preview of the Project
+![personal-back](https://user-images.githubusercontent.com/98649983/196050067-271c11be-31e3-4a9b-aad7-6679c2c1a45a.gif)
+
+### Built With
+
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+
+- Django
+- Django Rest Framework
+- Django Rest Auth
+- Django Cors Headers
+
+## Project Structure
+
+```bash
+.──── django-personal-app-backend (repo)
+│
+├── main
+│     ├── __pycache__
+│     ├── __init__.py
+│     ├── asgi.py
+│     ├── urls.py
+│     ├── wsgi.py
+│     └── settings.py
+│─── personalApp
+│       ├── __pycache__
+│       ├── migrations
+│       │── __init__.py
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── serializers.py
+│       ├── signals.py
+│       ├── tests.py
+│       ├── urls.py
+│       └── views.py
+├──── users
+│       ├── __pycache__
+│       ├── migrations
+│       ├── __init__.py
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── serializers.py
+│       ├── signals.py
+│       ├── tests.py
+│       ├── urls.py
+│       └── views.py
+├── manage.py
+├── db.sqlite3
+├── debug.log
+├── requirements.txt
+└── .env
 
 ```
-# KURULUM KOMUTLARI
-   1 py -m venv env
-   2 .\env\Scripts\activate
-   3 pip install djangorestframework
-   4 pip install dj-rest-auth
-   5 django-admin startproject main .
-   6 pip install python-decouple
-   7 py manage.py migrate
-   8 py manage.py createsuperuser
-   9 py manage.py startapp users
-```
 
-## How To Use Repo
-
-<!-- This is an example, please update according to your application -->
+## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com)
 
 ```bash
-
 # Clone this repository
-$ git clone https://github.com/anthonyharold67/personalAppBackend-ch11.git
+$ git clone https://github.com/esadakman/django-personal-app-backend
 
 # Install dependencies
-    $ python -m venv env
+    $ py -m venv env
     > env/Scripts/activate (for win OS)
     $ source env/bin/activate (for macOs/linux OS)
     $ pip install -r requirements.txt
 
-# Edit .backend.env to .env
 
-# Add SECRET_KEY in .env file
+# Add .env file for secret key and set your secret_key
+
+- Create a .env file for =>
+  -- SECRET_KEY,
+
+- After these you can run the project as usual =>
+    $ py manage.py migrate
+    $ py manage.py createsuperuser
 
 # Run the app
     $ python manage.py runserver
 ```
 
-### Expected
+## Contact
 
-<ul>
-    <li>Deparment ve Personal tablolarımız olacak bunları birbirlerine bağlayacağız. .her deparmentın altında kendisine ait personeller olacak.</li>
-    <li>Full stack proje sonunda login olan şirket personeli şirketin deparmentlarını ve o deparmentların altında çalışan personelleri detaylı bir şekilde görebilcek.</li>
-    <li>Staff olan personeller yeni personel listeye ekleyebilecek, update edebilecek.</li>
-    <li>Personal modelimizde is_staffed seçeneği olacak. Bu seçenek true olarak db ye gelirse kullanıcının first ve last nameine göre User tablosunda sorgulama yapıp kullanıcı varsa eşleşiyorsa o personelin User tablasoundaki bilgilerinden is_staff özelliğini true yapacağız.Ama yoksa personelin is_staffed değerini false olarak kaydedeceğiz.</li>
-    <li>Personeli silme yetkisi sadece superuserlarda olacak.</li>
-    <li>Bu yapıyı generic view kullanarak yapacağız. Class metotlarını override etme maksadıyla kişinin staff veya superuser olup olmadığını ona göre işlem yapması gerektiğini if-else yapılarıyla sağlayacağız. Rest framework permissionlarından IsAuthenticated ı kullanacağız. </li>
-    <li>Serializerımızda nested serializer ve methodfieldları kullancağız.</li>
-    <li>Token authentication kullanacağız. Kullanıcı logout olduğunda tokeni sileceğiz.</li>
-    <li>Frontend kısmını apimize bağlayabilmek için cors-headers paketini kullanacağız</li>
-</ul>
-<a href="https://github.com/adamchainz/django-cors-headers">Cors Headers paketi için</a>
-
-
-### Frontend Output
-
- 
+- Website [@esadakman](https://esadakman.github.io/)
+- GitHub [@esadakman](https://github.com/esadakman)
+- Linkedin [@esadakman](https://www.linkedin.com/in/esadakman/)

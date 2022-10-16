@@ -67,7 +67,7 @@ class PersonalGetUpdateDelete(RetrieveUpdateDestroyAPIView):
     
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        if self.request.user.is_superuser:
+        if self.request.user.is_superuser :
             self.perform_destroy(instance)
             data = {
                 "message": f"Name : {instance.first_name} deleted. "
