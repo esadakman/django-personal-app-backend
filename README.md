@@ -14,7 +14,7 @@
 
 - [Overview](#overview)
 - [Project Info](#projectinfo)
-<!-- - [Entity Relationship Diagram](#entity-relationship-diagram) -->
+- [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Project Link](#project-link)
 - [Preview](#preview-of-the-project)
 - [Built With](#built-with)
@@ -45,7 +45,10 @@
   - password: Littlekidlover1
 <!-- ERD -->
 
-<!-- ## Entity Relationship Diagram -->
+## Entity Relationship Diagram
+
+![erd](https://user-images.githubusercontent.com/98649983/196051154-04aba539-afb2-44d9-b81b-97858f3ad483.jpg)
+
 
  <!-- OVERVIEW -->
 

@@ -9,7 +9,8 @@ class Department(models.Model):
 
 
 class Personal(models.Model):
-    department = models.ForeignKey(Department,on_delete=models.SET_NULL,null=True,related_name='departments')#related_name="deparments" bize personellerin deparment ile ilişkisi olduğunu söyler ve daha sonra çağırmak için kullanılır kolaylık sağlar. deparment.id ve personel.id ile ilişkiyi kontrol edebiliriz.
+    department = models.ForeignKey(Department,on_delete=models.SET_NULL,null=True,related_name='departments')
+    # ! related_name="deparments" bize personellerin deparment ile ilişkisi olduğunu söyler ve daha sonra çağırmak için kullanılır kolaylık sağlar. deparment.id ve personel.id ile ilişkiyi kontrol edebiliriz.
     create_user = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     first_name= models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
