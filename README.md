@@ -1,4 +1,4 @@
-<h1 align="center">Full Stack - Personal List App - Backend</h1>
+<h1 align="center">Full Stack - Personnel List App - Backend</h1>
 
 <div align="center">
   <h3>
@@ -24,9 +24,9 @@
 
 ## Overview  
 
-- This is the backend side of my personal list app project.
+- This is the backend side of my Personnel list app project.
 - I used reactjs for frontend.
-  ##### You can see the frontend side of this project from [here](https://github.com/esadakman/reactjs-personal-app-frontend) 👈
+  ##### You can see the frontend side of this project from [here](https://github.com/esadakman/reactjs-personnel-app-frontend) 👈
 
 ## Project Info
 
@@ -70,7 +70,7 @@
 ## Project Structure
 
 ```bash
-.──── django-personal-app-backend (repo)
+.──── django-personnel-app-backend (repo)
 │
 ├── main
 │     ├── __pycache__
@@ -117,7 +117,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com)
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/esadakman/django-personal-app-backend
+$ git clone https://github.com/esadakman/django-personnel-app-backend
 
 # Install dependencies
     $ py -m venv env
